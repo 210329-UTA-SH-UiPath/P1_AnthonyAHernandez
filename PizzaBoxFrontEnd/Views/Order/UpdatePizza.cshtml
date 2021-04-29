@@ -52,14 +52,14 @@
             </tr>
 
             @foreach (var pizzaTopping in Model.PizzaToppings)
-            { //html table att to display orders w3schools
+            {
 
                 <tr>
                     <td>@pizzaTopping.Topping.Name</td>
                     <td>@pizzaTopping.Topping.Price.ToString("c2")</td>
                     <td>
                        
-                        @Html.ActionLink("Delete", "DeletePizzaTopping", new { id = pizzaTopping.Id })
+                        @Html.ActionLink("Delete", "Delete Pizza Topping", new { id = pizzaTopping.Id })
 
                     </td>
                 </tr>

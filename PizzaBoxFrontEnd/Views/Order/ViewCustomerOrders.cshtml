@@ -28,7 +28,7 @@
             </tr>
 
             @foreach (var order in (List<PizzaBox.Domain.Entities.Order>)ViewBag.CustomerOrders)
-            { //html table att to display orders w3schools
+            {
 
                 <tr>
                     <td>@order.Customer.CustomerName</td>

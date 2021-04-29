@@ -23,7 +23,7 @@ namespace PizzaBox.Domain.Entities
 		{
             Pizzas = new List<Pizza>();
             OrderDate = DateTime.Now;
-			OrderStatus = "pending";
+			OrderStatus = "In Progress";
         }
 		
 		public int GetQuantity()
