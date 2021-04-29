@@ -43,10 +43,10 @@ namespace PizzaBox.Testing.Tests
             Assert.Equal("Bbq Chicken Pizza", actual);
     }
     [Fact]
-    public void KetoFriendlyPizza_ShouldHaveCorrectName()
+    public void KetoPizza_ShouldHaveCorrectName()
     {
             // arrange
-            var sut = new KetoFriendlyPizza();
+            var sut = new KetoPizza();
 
             // act
             var actual = sut.Name;

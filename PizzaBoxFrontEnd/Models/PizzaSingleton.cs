@@ -27,7 +27,7 @@ namespace PizzaBox.Client.Singletons
       {
         new MeatPizza(),
         new VeganPizza(),
-        new KetoFriendlyPizza(),
+        new KetoPizza(),
         new BbqChickenPizza(),
         new CreateYourOwn()
     };
