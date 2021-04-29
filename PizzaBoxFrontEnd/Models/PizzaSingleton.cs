@@ -4,9 +4,6 @@ using PizzaBox.Domain.Models;
 
 namespace PizzaBox.Client.Singletons
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	public class PizzaSingleton
   {
     private static PizzaSingleton _instance;
@@ -24,10 +21,6 @@ namespace PizzaBox.Client.Singletons
         return _instance;
       }
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
     private PizzaSingleton()
     {
       Pizzas = new List<Pizza>()

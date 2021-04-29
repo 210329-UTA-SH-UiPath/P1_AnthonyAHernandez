@@ -634,7 +634,7 @@ namespace PizzaBoxFrontEnd.Controllers
             months.Add(new SelectListItem
             {
                 Value = "10",
-                Text = "October"
+                Text = "Spooky Month"
             });
             months.Add(new SelectListItem
             {
@@ -721,13 +721,13 @@ namespace PizzaBoxFrontEnd.Controllers
             order.Pizzas = existingOrder.Pizzas;
             if(order.Pizzas == null || !order.Pizzas.Any())
             {
-                ViewBag.ErrorMessage = "ERROR Please select at least 1 pizza.";
+                ViewBag.ErrorMessage = "Please select at least 1 pizza.";
                 return ConfirmOrder(order.Id);
             }
             var total = order.GetTotal();
             if (total > 250)
             {
-                ViewBag.ErrorMessage = "ERROR your order cannot be more than $250.";
+                ViewBag.ErrorMessage = "Your order cannot be more than $250.";
 
                 return ConfirmOrder(order.Id);
             }
@@ -735,14 +735,14 @@ namespace PizzaBoxFrontEnd.Controllers
             var quantity = order.GetQuantity();
             if (quantity > 50)
             {
-                ViewBag.ErrorMessage = "ERROR you cannot order more than 50 pizzas.";
+                ViewBag.ErrorMessage = "You cannot order more than 50 pizzas.";
 
                 return ConfirmOrder(order.Id);
             }
 
-            order.OrderStatus = "completed";
+            order.OrderStatus = "Completed";
             UpdateOrderApi(order);
-            TempData["SuccessMessage"] = "You have successfully completed the order!"; //tempdata = key value dictionary use to pass info to diff page 
+            TempData["SuccessMessage"] = "You have successfully placed an order!"; 
             return RedirectToAction("Index", "Home");
         }
 

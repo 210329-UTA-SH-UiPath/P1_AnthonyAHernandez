@@ -2,9 +2,6 @@ using PizzaBox.Domain.Entities;
 
 namespace PizzaBox.Domain.Models
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	public class BbqChickenPizza : Pizza
 	{
 

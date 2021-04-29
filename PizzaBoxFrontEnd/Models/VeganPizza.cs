@@ -2,15 +2,12 @@ using PizzaBox.Domain.Entities;
 
 namespace PizzaBox.Domain.Models
 {
-	/// <summary>
-	/// 
-	/// </summary>
 	public class VeganPizza : Pizza
 	{
 
 		public VeganPizza()
 		{
-			Name = "Vegan Pizza";
+			Name = "Grass Consumer Pizza";
 			var spinachTopping = PizzaHelper.GetTopping("Spinach");
 			if (spinachTopping != null)
             {

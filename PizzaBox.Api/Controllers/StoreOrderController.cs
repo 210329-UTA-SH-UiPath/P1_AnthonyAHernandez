@@ -31,7 +31,7 @@ namespace PizzaBox.Api.Controllers
                 ThenInclude(p => p.PizzaToppings).ThenInclude(pt => pt.Topping)
                 .Include(o => o.Pizzas).ThenInclude(p => p.Crust)
                 .Include(o => o.Pizzas).ThenInclude(p => p.Size)
-                .Where(o => o.StoreId == id && o.OrderStatus == "completed").ToList();
+                .Where(o => o.StoreId == id && o.OrderStatus == "Completed").ToList();
             return customerOrders;
         }
     }

@@ -21,38 +21,7 @@ namespace PizzaBox.Api.Controllers
             _logger = logger;
             _context = context;
         }
-
-		//private Order PlaceOrder(Order order)
-		//{
-			
-		//	foreach (var pizza in order.Pizzas)
-		//	{
-		//		var newPizza = new Pizza
-		//		{
-		//			OrderId = newOrder.Id,
-		//			Name = pizza.Name,
-		//			SizeId = pizza.SizeId,
-		//			CrustId = pizza.CrustId,
-		//			Quantity = pizza.Quantity
-		//		};
-		//		_context.Pizzas.Add(newPizza);
-		//		_context.SaveChanges();
-
-		//		foreach (var pizzaTopping in pizza.PizzaToppings)
-		//		{
-		//			var newpizzaTopping = new PizzaTopping
-		//			{
-		//				PizzaId = newPizza.Id,
-		//				ToppingId = pizzaTopping.ToppingId
-		//			};
-		//			_context.PizzaToppings.Add(newpizzaTopping);
-		//			_context.SaveChanges();
-		//		}
-		//	}
-		//	_context.SaveChanges();
-		//	return newOrder;
-
-		//}
+	
 		[HttpGet]
 
 		public Order Get(int id)

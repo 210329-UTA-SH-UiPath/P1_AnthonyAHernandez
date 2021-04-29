@@ -37,11 +37,11 @@ namespace PizzaBoxFrontEnd.Controllers
             var response = client.PostAsync(url, httpContent);
             if (response.Result.IsSuccessStatusCode)
             {
-                ViewBag.Message = "Customer was added successfully";
+                ViewBag.Message = "New Customer added.";
             }
             else
             {
-                ViewBag.Message = "ERROR: Please try again!";
+                ViewBag.Message = "Something went wrong! Please try again!";
             }
             return AddCustomer();
         }
