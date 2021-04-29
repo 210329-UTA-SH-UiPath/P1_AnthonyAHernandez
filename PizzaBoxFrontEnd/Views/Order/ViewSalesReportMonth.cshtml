@@ -1,0 +1,45 @@
+﻿@model ViewSalesReportMonthViewModel
+
+
+<div class="text-center">
+    <h1 class="display-4">View Monthly Sales</h1>
+    <form asp-action="ViewSalesReportMonth">
+        <div class="form-group">
+            <label>
+                Month
+            </label>
+            <select asp-for="Month" asp-items="@ViewBag.months">
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+    @if (ViewBag.totalRevenue != null)
+            {
+                <label>
+                    Total Revenue : @ViewBag.totalRevenue
+                </label>
+            }
+    @if (ViewBag.pizzaNameCounts != null)
+    {
+        <table style="width:100%">
+            <tr>
+                <th>Pizza Name</th>
+                <th>Count</th>
+
+            </tr>
+
+            @foreach (var pizzaNameCount in (List<PizzaNameCount>)ViewBag.pizzaNameCounts)
+            { //html table att to display orders w3schools
+
+                <tr>
+                    <td>@pizzaNameCount.PizzaName</td>
+                    <td>@pizzaNameCount.Count</td>
+                </tr>
+            }
+        </table>
+    }
+
+
+</div>

@@ -1,0 +1,72 @@
+﻿@model PizzaBox.Domain.Entities.Order
+
+
+<div class="text-center">
+    <h1 class="display-4">Confirm Order</h1>
+    @if(ViewBag.ErrorMessage != null)
+            {
+                <label class="text-danger">
+                    @ViewBag.ErrorMessage
+                </label>
+            } 
+    <form asp-action="ConfirmOrder">
+        @Html.HiddenFor(m=>m.Id)
+        <div class="form-group">
+            <label>
+                Customer
+            </label>
+            <select asp-for="CustomerId" asp-items="@ViewBag.Customers">
+            </select>
+        </div>
+        <div class="form-group">
+            <label>
+                Store
+            </label>
+            <select asp-for="StoreId" asp-items="@ViewBag.Stores">
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Confirm" class="btn btn-primary" />
+        </div>
+    </form>
+    
+    @Html.ActionLink("Add Pizza", "SelectPizza", new { id = Model.Id})  
+    @if (Model.Pizzas != null)
+    {
+        <table style="width:100%">
+            <tr>
+                <th>Pizza Name</th>
+                <th>Quantity</th>
+                <th>Crust</th>
+                <th>Size</th>
+                <th>Toppings</th>
+                <th></th>
+            </tr>
+
+            @foreach (var pizza in Model.Pizzas)
+            { 
+                <tr>
+                    <td>@pizza.Name</td>
+                    <td>@pizza.Quantity</td>
+                    <td>@pizza.Crust.Name</td>
+                    <td>@pizza.Size.Name</td>
+                    <td>
+                        @foreach ( var pizzaTopping in pizza.PizzaToppings)
+                        {
+                        <div>@pizzaTopping.Topping.Name</div>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "UpdatePizza", new { id = pizza.Id })
+
+                        @Html.ActionLink("Delete", "DeletePizza", new { id = pizza.Id })
+
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+
+    <div>Total: @Model.GetTotal().ToString("c2")</div>
+
+</div>

@@ -1,0 +1,62 @@
+﻿@model PlaceOrderViewModel
+@{
+    ViewData["Title"] = "Place Order";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Place Order</h1>
+    @if (ViewBag.ErrorMessage != null)
+            {
+                <label class="text-danger">
+                    @ViewBag.ErrorMessage
+                    
+                </label>
+            }
+
+    <form asp-action="InitOrder">
+        @Html.HiddenFor(m=>m.OrderId)
+        <div class="form-group">
+            <label>
+                Customer
+            </label>
+            <select asp-for="CustomerId" asp-items="@ViewBag.Customers">
+            </select>
+        </div>
+        <div class="form-group">
+            <label>
+                Store
+            </label>
+            <select asp-for="StoreId" asp-items="@ViewBag.Stores">
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Next" class="btn btn-primary" />
+        </div>
+    </form>
+    
+    @*@Html.ActionLink("Add Pizza", "AddPizza", new { orderId = Model.OrderId, customerId = Model.CustomerId, storeId = Model.StoreId })*@  
+    @if (ViewBag.Pizzas != null)
+    {
+        <table style="width:100%">
+            <tr>
+                <th>Pizza Name</th>
+                <th>Quantity</th>
+                <th>Crust</th>
+                <th>Size</th>
+            </tr>
+
+            @foreach (var pizza in (List<PizzaBox.Domain.Entities.Pizza>)ViewBag.Pizzas)
+            { 
+
+                <tr>
+                    <td>@pizza.Name</td>
+                    <td>@pizza.Quantity</td>
+                    <td>@pizza.Crust.Name</td>
+                    <td>@pizza.Size.Name</td>
+                </tr>
+            }
+        </table>
+    }
+
+
+</div>
