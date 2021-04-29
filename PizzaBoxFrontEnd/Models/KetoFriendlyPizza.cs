@@ -2,10 +2,10 @@ using PizzaBox.Domain.Entities;
 
 namespace PizzaBox.Domain.Models
 {
-  public class KetoFriendlyPizza : Pizza
+  public class KetoPizza : Pizza
   {
 
-    public KetoFriendlyPizza()
+    public KetoPizza()
     {
       Name = "Keto Pizza";
             var extraCheeseTopping = PizzaHelper.GetTopping("Extra Cheese");

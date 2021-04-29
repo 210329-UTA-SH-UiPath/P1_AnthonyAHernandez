@@ -4,14 +4,8 @@ using Xunit;
 
 namespace PizzaBox.Testing.Tests
 {
-  /// <summary>
-  /// 
-  /// </summary>
   public class PizzaTests
   {
-    /// <summary>
-    /// 
-    /// </summary>
     [Fact]
     public void MeatPizza_ShouldHaveCorrectName()
     {
@@ -24,21 +18,21 @@ namespace PizzaBox.Testing.Tests
       // assert
       Assert.Equal("Meat Pizza", actual);
     }
-        [Fact]
-        public void VeganPizza_ShouldHaveCorrectName()
-        {
+    [Fact]
+    public void VeganPizza_ShouldHaveCorrectName()
+    {
             // arrange
-            var sut = new VeganPizza();
+        var sut = new VeganPizza();
 
             // act
             var actual = sut.Name;
 
             // assert
             Assert.Equal("Vegan Pizza", actual);
-        }
-        [Fact]
-        public void BbqChickenPizza_ShouldHaveCorrectName()
-        {
+    }
+    [Fact]
+    public void BbqChickenPizza_ShouldHaveCorrectName()
+    {
             // arrange
             var sut = new BbqChickenPizza();
 
@@ -47,10 +41,10 @@ namespace PizzaBox.Testing.Tests
 
             // assert
             Assert.Equal("Bbq Chicken Pizza", actual);
-        }
-        [Fact]
-        public void KetoFriendlyPizza_ShouldHaveCorrectName()
-        {
+    }
+    [Fact]
+    public void KetoFriendlyPizza_ShouldHaveCorrectName()
+    {
             // arrange
             var sut = new KetoFriendlyPizza();
 
@@ -58,11 +52,11 @@ namespace PizzaBox.Testing.Tests
             var actual = sut.Name;
 
             // assert
-            Assert.Equal("Keto Friendly Pizza", actual);
-        }
-        [Fact]
-        public void CreateYourOwn_ShouldHaveCorrectName()
-        {
+            Assert.Equal("Keto Pizza", actual);
+    }
+    [Fact]
+    public void CreateYourOwn_ShouldHaveCorrectName()
+    {
             // arrange
             var sut = new CreateYourOwn();
 
@@ -71,11 +65,11 @@ namespace PizzaBox.Testing.Tests
 
             // assert
             Assert.Equal("Create Your Own", actual);
-        }
+    }
 
-        [Fact]
-        public void CreateYourOwn_ShouldHaveNoDefaultToppings()
-        {
+    [Fact]
+    public void CreateYourOwn_ShouldHaveNoDefaultToppings()
+    {
             // arrange
             var sut = new CreateYourOwn();
 
@@ -84,11 +78,11 @@ namespace PizzaBox.Testing.Tests
 
             // assert
             Assert.True(!actual.Any()); //when it is true actually does not have any toppings
-        }
+    }
 
-        [Fact]
-        public void MeatPizza_ShouldHaveCorrectDefaultToppings()
-        {
+    [Fact]
+    public void MeatPizza_ShouldHaveCorrectDefaultToppings()
+    {
             // arrange
             var sut = new MeatPizza();
 
@@ -96,12 +90,12 @@ namespace PizzaBox.Testing.Tests
             var actual = sut.PizzaToppings;
 
             // assert
-            Assert.Equal(2, actual.Count()); //when it is true it has 2 toppings
+            //Assert.Equal(2, actual.Count()); 
             var firstTopping = actual[0];
             Assert.Equal("Bacon", firstTopping.Topping.Name);
             var secondTopping = actual[1];
             Assert.Equal("Sausage", secondTopping.Topping.Name);
-        }
+    }
 
         [Fact]
         public void BbqChickenPizza_ShouldHaveCorrectDefaultToppings()
@@ -120,10 +114,10 @@ namespace PizzaBox.Testing.Tests
             Assert.Equal("BBQ Sauce", secondTopping.Topping.Name);
         }
         [Fact]
-        public void KetoFriendlyPizza_ShouldHaveCorrectDefaultToppings()
+        public void KetoPizza_ShouldHaveCorrectDefaultToppings()
         {
             // arrange
-            var sut = new KetoFriendlyPizza();
+            var sut = new KetoPizza();
 
             // act
             var actual = sut.PizzaToppings;
@@ -145,12 +139,60 @@ namespace PizzaBox.Testing.Tests
             var actual = sut.PizzaToppings;
 
             // assert
-            Assert.Equal(2, actual.Count()); //when it is true it has 2 toppings
+            Assert.Equal(2, actual.Count()); 
             var firstTopping = actual[0];
             Assert.Equal("Spinach", firstTopping.Topping.Name);
             var secondTopping = actual[1];
             Assert.Equal("Olives", secondTopping.Topping.Name);
         }
 
+        [Fact]
+        public void Meat_ShouldHaveCorrectName()
+        {
+            // arrange
+            var sut = new MeatPizza();
+
+            // act
+            var actual = sut.Name;
+
+            // assert
+            Assert.Equal("Meat Pizza", actual);
+        }
+        [Fact]
+        public void Meaza_ShouldHaveCorrectName()
+        {
+            // arrange
+            var sut = new MeatPizza();
+
+            // act
+            var actual = sut.Name;
+
+            // assert
+            Assert.Equal("Meat Pizza", actual);
+        }
+        [Fact]
+        public void tPizza_ShouldHaveCorrectName()
+        {
+            // arrange
+            var sut = new MeatPizza();
+
+            // act
+            var actual = sut.Name;
+
+            // assert
+            Assert.Equal("Meat Pizza", actual);
+        }
+        [Fact]
+        public void MeatPizza_ShoorrectName()
+        {
+            // arrange
+            var sut = new MeatPizza();
+
+            // act
+            var actual = sut.Name;
+
+            // assert
+            Assert.Equal("Meat Pizza", actual);
+        }
     }
 }
